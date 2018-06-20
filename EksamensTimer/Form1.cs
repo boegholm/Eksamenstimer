@@ -29,19 +29,18 @@ namespace EksamensTimer
         private TimeSpan Elapsed => DateTime.Now - _dt;
         private bool _playing = false;
 
-        private Color _lastColor;
-
         public Form1()
         {
             InitializeComponent();
             ResetTime();
-            label1.Text = "CTRL+ [G: Green                            " 
+            label1.Text = "CTRL | ALT + [G: Green                            " 
                         + "R: Red                              "
-                        + "B: Black                            "
-                        + "S: Silence                          "
+                        + "B: Black  ]                          "
+                        + "CTRL + [ S: Silence                          "
                         + "Q: Reset time                       "
-                        + "T: Timestamp]";
-            _lastColor = textBox1.SelectionColor;
+                        + "T: Timestamp]                  " +
+                          "ENTER X2: Timeprefix line" ;
+            label2.Text = textBox1.SelectionColor.ToString();
             textBox1.SelectionChanged += (sender, args) =>
             {
 
